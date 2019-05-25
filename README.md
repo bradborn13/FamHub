@@ -1,2 +1,2 @@
 # FamilyHubb
-Electron app for personal learning project
+Electron app for personal learning project ideea
