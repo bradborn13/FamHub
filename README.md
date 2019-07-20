@@ -1,5 +1,9 @@
 # fam-hub
 
+"electron": "vue-cli-service build; electron .",
+"electron:build": "vue-cli-service electron:build",
+"electron:serve": "vue-cli-service electron:serve",
+
 ## Project setup
 
 ```

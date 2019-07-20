@@ -1,8 +1,7 @@
-
-
-<script>
+<script  >
 import Component from "vue-class-component";
 import Vue from "vue";
+
 @Component({
   name: "HelloWorld",
   props: {
@@ -10,15 +9,22 @@ import Vue from "vue";
   }
 })
 // eslint-disable-next-line
-export default class HelloWorld extends Vue {}
+export default class HelloWorld extends Vue {
+  
+  name = "lucian"
+  navigate(routeName){
+    this.$router.push('/login');
+  }
+}
 </script>
 <template>
+<article>
   <div class="hello">
-    <p>Ciao Lucian,asa incepem proiectu cu un simple "HELLO WORLD"</p>
-    <button id="notifyBtn" class="button" type="button">Notify me when ...</button>
+    <p>Ciao Lucian,asa incepem proiectu cu un simple "HELLO WORLD"  + {{name}}</p>
+    <button id="notifyBtn" v-on:click="navigate('login')" class="button" type="button">Notify me when ...</button>
   </div>
+  </article>
 </template>
-<script src = "../action/login.js"></script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

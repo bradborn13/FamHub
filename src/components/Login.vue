@@ -10,13 +10,18 @@ import Vue from "vue";
   }
 })
 // eslint-disable-next-line
-export default class Login extends Vue {}
+export default class Login extends Vue {
+    navigate(){
+  
+    this.$router.push('/home');
+  }
+}
 </script>
 <template>
   <div class="hello">
     <h1>Do you want to login?</h1>
     <p>LOGIN PAGE</p>
-    <button class="button" type="button">Click here</button>
+    <button class="button" v-on:click="navigate()" type="button">Click here</button>
   </div>
 </template>
 
