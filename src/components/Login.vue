@@ -4,21 +4,21 @@
 import Component from "vue-class-component";
 import Vue from "vue";
 @Component({
-  name: "HelloWorld",
+  name: "Login",
   props: {
     msg: String
   }
 })
 // eslint-disable-next-line
-export default class HelloWorld extends Vue {}
+export default class Login extends Vue {}
 </script>
 <template>
   <div class="hello">
-    <p>Ciao Lucian,asa incepem proiectu cu un simple "HELLO WORLD"</p>
-    <button id="notifyBtn" class="button" type="button">Notify me when ...</button>
+    <h1>Do you want to login?</h1>
+    <p>LOGIN PAGE</p>
+    <button class="button" type="button">Click here</button>
   </div>
 </template>
-<script src = "../action/login.js"></script>
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
