@@ -1,6 +1,6 @@
 
 
-<script>
+<script lang="ts">
 import Component from "vue-class-component";
 import Vue from "vue";
 @Component({
@@ -11,6 +11,7 @@ import Vue from "vue";
 })
 // eslint-disable-next-line
 export default class Login extends Vue {
+  cart ='dsa';
     navigate(){
   
     this.$router.push('/home');
