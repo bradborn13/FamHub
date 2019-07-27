@@ -1,6 +1,10 @@
-<template>
+ <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/guitar.jpg" height="50%" width="50%" />
+    <br />
+    <button class="button" v-on:click="navigate('/login')" type="button">Login</button>
+    <button class="button" v-on:click="navigate('/googleAuth')" type="button">Google Auth</button>
+
     <router-view></router-view>
   </div>
 </template>
@@ -12,12 +16,14 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 @Component({
   name: "app",
-  components: {
-    HelloWorld
-  }
+  components: {}
 })
 // eslint-disable-next-line
-export default class app extends Vue {}
+export default class app extends Vue {
+  navigate(route) {
+    this.$router.push(route);
+  }
+}
 </script>
 
 <style>
@@ -26,7 +32,5 @@ export default class app extends Vue {}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

@@ -29,7 +29,6 @@ function createWindow() {
   win = new BrowserWindow({
     width: 800,
     height: 600,
-    backgroundColor: "#D3D3D3",
     webPreferences: {
       nodeIntegration: true
     }
@@ -52,7 +51,10 @@ function createWindow() {
   var menu = Menu.buildFromTemplate([{
       label: "Menu",
       submenu: [{
-          label: "Login"
+          label: "Login",
+          click() {
+            this.$router.push('/login');
+          }
         },
         {
           type: "separator"
