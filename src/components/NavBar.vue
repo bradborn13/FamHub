@@ -15,8 +15,8 @@ export default class Login extends Vue {
   // Client ID and API key from the Developer Console
 
   CLIENT_ID =
-    "870917415471-q0tefr9o205uhippvdchna6srp5heu2c.apps.googleusercontent.com";
-  API_KEY = "AIzaSyDy5c_Ie7ueg6l1AQCQbPIqLtA_ic_u5bw";
+    "";
+  API_KEY = "";
 
   // Array of API discovery doc URLs for APIs used by the quickstart
   DISCOVERY_DOCS = [
