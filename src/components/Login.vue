@@ -1,4 +1,4 @@
-<script >
+<script  >
 import Component from "vue-class-component";
 import Vue from "vue";
 @Component({
@@ -7,7 +7,7 @@ import Vue from "vue";
     msg: String
   }
 })
-// eslint-disable-next-line
+/* eslint-disable */
 export default class Login extends Vue {
   rememberMe = false;
   authForm = {
@@ -15,7 +15,14 @@ export default class Login extends Vue {
     password: ""
   };
   authUser() {
+    console.log(process.env.GOOGLE_CLIENT_ID, "COAIE");
     console.log(this.authForm, "form");
+    this.$getGapiClient().then(gapi => {
+      if (this.$isAuthenticated() !== true) {
+        this.$login();
+      }
+      console.log(gapi, "theGAPI");
+    });
   }
 
   redirectToGoogle() {
