@@ -1,39 +1,7 @@
-// {
-//     "compilerOptions": {
-//         "target": "esnext",
-//         "module": "esnext",
-//         "strict": true,
-//         "jsx": "preserve",
-//         "importHelpers": true,
-//         "moduleResolution": "node",
-//         "experimentalDecorators": true,
-//         "noImplicitAny": false,
-//         "esModuleInterop": true,
-//         "allowSyntheticDefaultImports": true,
-//         "sourceMap": true,
-//         "baseUrl": ".",
-//         "types": ["node", "webpack-env", "jest"],
-//         "paths": {
-//             "@/*": ["src/*"],
-//             "vue-analytics": ["src/typings/vue-analytics"]
-//         },
-//         "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
-//     },
-//     "include": [
-//         "src/**/*.ts",
-//         "src/**/*.tsx",
-//         "src/**/*.vue",
-//         "tests/**/*.ts",
-//         "tests/**/*.tsx",
-//         "node_modules/@types",
-//         "src/app/pages/admindash/components/charts/lineChart.js"
-//     ],
-//     "exclude": ["node_modules"]
-// }
 {
     "compilerOptions": {
-        "lib": ["dom", "es5", "es2015"],
-        "target": "es5",
+        "lib": ["dom", "es6", "es2016"],
+        "target": "es6",
         "module": "es2015",
         "moduleResolution": "node",
         "sourceMap": true,
