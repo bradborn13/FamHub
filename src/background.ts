@@ -1,28 +1,25 @@
 "use strict";
-import {
-  app,
-  protocol,
-  BrowserWindow,
-  Menu
-} from "electron";
+import { app, protocol, BrowserWindow, Menu } from "electron";
 import {
   createProtocol,
   installVueDevtools
 } from "vue-cli-plugin-electron-builder/lib";
 const isDevelopment = process.env.NODE_ENV !== "production";
-const shell = require('electron').shell;
+const shell = require("electron").shell;
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
 // Scheme must be registered before the app is ready
-protocol.registerSchemesAsPrivileged([{
-  scheme: "app",
-  privileges: {
-    secure: true,
-    standard: true
+protocol.registerSchemesAsPrivileged([
+  {
+    scheme: "app",
+    privileges: {
+      secure: true,
+      standard: true
+    }
   }
-}]);
+]);
 
 function createWindow() {
   // Create the browser window.
@@ -48,26 +45,33 @@ function createWindow() {
   win.on("closed", () => {
     win = null;
   });
-  var menu = Menu.buildFromTemplate([{
+  var menu = Menu.buildFromTemplate([
+    {
       label: "Menu",
-      submenu: [{
+      submenu: [
+        {
           label: "Login",
           click() {
-            this.$router.push('/login');
+            this.$router.push("/login");
           }
         },
         {
           type: "separator"
-        }, {
+        },
+        {
           label: "Acasa",
           click() {
-            shell.openExternal('https://www.google.com/maps/@45.7592243,21.2397588,3a,75y,13.22h,87.46t/data=!3m6!1e1!3m4!1sMEzXO18f41PIeTh43ng__A!2e0!7i13312!8i6656')
+            shell.openExternal(
+              "https://www.google.com/maps/@45.7592243,21.2397588,3a,75y,13.22h,87.46t/data=!3m6!1e1!3m4!1sMEzXO18f41PIeTh43ng__A!2e0!7i13312!8i6656"
+            );
           }
         },
         {
           label: "Acasa la mamaia",
           click() {
-            shell.openExternal('https://www.google.com/maps/@47.1088378,26.3386362,3a,76y,358.86h,82.63t/data=!3m9!1e1!3m7!1sVKHuX30yMLJIMieh8Vfi1A!2e0!7i13312!8i6656!9m2!1b1!2i40')
+            shell.openExternal(
+              "https://www.google.com/maps/@47.1088378,26.3386362,3a,76y,358.86h,82.63t/data=!3m9!1e1!3m7!1sVKHuX30yMLJIMieh8Vfi1A!2e0!7i13312!8i6656!9m2!1b1!2i40"
+            );
           }
         },
         {
@@ -85,13 +89,15 @@ function createWindow() {
       ]
     },
     {
-      label: 'Help',
-      submenu: [{
-        label: 'Menu Docs',
-        click() {
-          shell.openExternal('https://electronjs.org/docs/api/menu');
+      label: "Help",
+      submenu: [
+        {
+          label: "Menu Docs",
+          click() {
+            shell.openExternal("https://electronjs.org/docs/api/menu");
+          }
         }
-      }]
+      ]
     }
   ]);
   Menu.setApplicationMenu(menu);

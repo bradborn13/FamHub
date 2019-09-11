@@ -1,10 +1,37 @@
 {
     "compilerOptions": {
-        "lib": ["dom", "es6", "es2016"],
-        "target": "es6",
-        "module": "es2015",
+        "lib": ["dom", "es6", "es2016", "dom.iterable", "esnext", "scripthost"],
+        "target": "esnext",
+        "module": "esnext",
+        "strict": false,
+        "importHelpers": true,
+        "esModuleInterop": true,
+
+        "types": [
+            "webpack-env",
+            "mocha"
+        ],
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "baseUrl": ".",
+        "jsx": "preserve",
         "moduleResolution": "node",
         "sourceMap": true,
-        "allowSyntheticDefaultImports": true
-    }
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true
+
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
 }

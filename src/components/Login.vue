@@ -1,28 +1,39 @@
-<script  >
+<script lang='ts' >
 import Component from "vue-class-component";
 import Vue from "vue";
+import GoogleLogin from "vue-google-login";
+
 @Component({
   name: "Login",
+  components: {
+    GoogleLogin
+  },
   props: {
     msg: String
   }
 })
 /* eslint-disable */
 export default class Login extends Vue {
-  rememberMe = false;
-  authForm = {
+  rememberMe: boolean = false;
+  authForm: Object = {
     email: "",
     password: ""
   };
-  authUser() {
-    console.log(process.env.GOOGLE_CLIENT_ID, "COAIE");
-    console.log(this.authForm, "form");
-    this.$getGapiClient().then(gapi => {
-      if (this.$isAuthenticated() !== true) {
-        this.$login();
-      }
-      console.log(gapi, "theGAPI");
-    });
+
+  onSuccess(googleUser) {
+    alert("A");
+    const profile = googleUser.getBasicProfile();
+    console.log(profile);
+    alert("loggedIn");
+  }
+  mounted() {
+    let recaptchaScript = document.createElement("script");
+    // recaptchaScript.setAttribute(
+    //   "src",
+    //   "https://apis.google.com/js/platform.js",
+    //   "async defer"
+    // );
+    document.head.appendChild(recaptchaScript);
   }
 
   redirectToGoogle() {
@@ -38,6 +49,8 @@ export default class Login extends Vue {
   <div class="bodyStyle">
     <div class="body">
       <h1>Log in to FamHubb</h1>
+      <div id="google-signin-button"></div>
+
       <input
         type="text"
         placeholder="Email"
@@ -60,11 +73,13 @@ export default class Login extends Vue {
     </div>
     <div class="footer">
       Dont have an account?
+      <GoogleLogin :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
       <a href="#" @click="redirectToGoogle()">Sign Up</a>
+      OR
     </div>
   </div>
 </template>
-<style>
+<style type="scss">
 .body {
   padding-bottom: 10px;
 }

@@ -12,6 +12,11 @@ export default class Login extends Vue {
   navigate() {
     this.$router.push("/home");
   }
+  onSignIn(googleUser) {
+    const profile = googleUser.getBasicProfile();
+    console.log(profile);
+    alert("loggedIn");
+  }
   mounted() {
     let recaptchaScript = document.createElement("script");
     recaptchaScript.setAttribute(
